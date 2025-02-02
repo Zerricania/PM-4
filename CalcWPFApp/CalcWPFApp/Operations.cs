@@ -12,6 +12,9 @@ namespace CalcWPFApp
         Add,
         Subtract,
         Divide,
-        Multiply
+        Multiply,
+        Percentage,
+        Factorial,
+        Power
     }
 }

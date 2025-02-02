@@ -76,6 +76,27 @@ namespace CalcWPFApp
                 case "=":
                     Calculate();
                     break;
+                case "%":
+                    _operation = Operations.Percentage;
+                    ChangePreviousNumber();
+                    break;
+                case "X":
+                    _operation = Operations.Multiply;
+                    ChangePreviousNumber();
+                    break;
+                case "-":
+                    _operation = Operations.Subtract;
+                    ChangePreviousNumber();
+                    break;
+                case "n!":
+                    var Fnum = Convert.ToDouble(resultLabel.Content);
+                    var fres = MathOperations.Factorial(Fnum);
+                    UpdateUI(fres);
+                    break;
+                case "xʸ":
+                    _operation = Operations.Power;
+                    ChangePreviousNumber();
+                    break;
             }
         }
 
@@ -97,6 +118,9 @@ namespace CalcWPFApp
                     UpdateUI(result);
                     break;
                 case Operations.Subtract:
+                    var CurrentNumber = Convert.ToDouble(resultLabel.Content);
+                    var Result = MathOperations.Subtract(_previousNumber, CurrentNumber);
+                    UpdateUI(Result);
                     break;
                 case Operations.Divide:
                     var current = Convert.ToDouble(resultLabel.Content);
@@ -104,6 +128,19 @@ namespace CalcWPFApp
                     UpdateUI(res);
                     break;
                 case Operations.Multiply:
+                    var currentNum = Convert.ToDouble(resultLabel.Content);
+                    var reslt = MathOperations.Multiply(_previousNumber,currentNum);
+                    UpdateUI(reslt);
+                    break;
+                case Operations.Percentage:
+                    var CurrentNumb = Convert.ToDouble(resultLabel.Content);
+                    var Reslt = MathOperations.Percentage(_previousNumber, CurrentNumb);
+                    UpdateUI(Reslt);
+                    break;
+                case Operations.Power:
+                    var exponent = Convert.ToDouble(resultLabel.Content);
+                    var powerResult = MathOperations.Power(_previousNumber, exponent);
+                    UpdateUI(powerResult);
                     break;
             }
         }
