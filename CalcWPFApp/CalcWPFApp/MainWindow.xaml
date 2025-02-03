@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CalcWPFApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="481" Width="462" Background="#FF121212">
+        Title="MainWindow" Height="425" Width="382" Background="#FF121212">
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="19*" />
-            <ColumnDefinition Width="19*" />
-            <ColumnDefinition Width="19*" />
-            <ColumnDefinition Width="19*" />
-            <ColumnDefinition Width="19*"/>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
@@ -24,14 +24,12 @@
             <RowDefinition />
         </Grid.RowDefinitions>
         <Label 
-            x:Name="resultLabel"
-            Content="0" 
-            Grid.Row="0" 
-            Grid.Column="4" 
-            HorizontalAlignment="Center" 
-            VerticalAlignment="Top"
-            FontSize="60"
-            FontWeight="Bold" Background="#FF121212" Foreground="White" Margin="0,49,0,0" Grid.RowSpan="2"/>
+           x:Name="resultLabel"
+        Content="0"
+        FontSize="60"
+        HorizontalAlignment="Right" 
+        VerticalAlignment="Top"
+        MinWidth="60" Foreground="#FFFFF9F9" Width="351" Grid.ColumnSpan="5" Margin="0,10,10,0" />
         <Button 
             Content="C" 
             Click="OperationButton_Click"
