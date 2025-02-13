@@ -1,0 +1,31 @@
+﻿<Window x:Class="convertWPFApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:convertWPFApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="200" Width="420">
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel Orientation="Horizontal">
+                <Button 
+                    Content="Валюта"
+                    Click="currencyWindowOpen_Click"
+                    Width="100" Height="50"
+                     Margin=" 30 0 0 60  ">
+                </Button>
+                <Button 
+                    Content="Длина"
+                    Width="100" Height="50"
+                    Margin=" 30 0 0 60 ">
+                </Button>
+                <Button 
+                    Content="Масса"
+                    Width="100" Height="50"
+                    Margin=" 30 0 0 60 ">
+                </Button>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>
