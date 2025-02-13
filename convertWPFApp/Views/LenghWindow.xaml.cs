@@ -3,14 +3,14 @@ using System.Windows.Controls;
 
 namespace convertWPFApp.Views;
 
-public partial class CurrencyWindow
+public partial class LenghWindow : Window
 {
-    public CurrencyWindow()
+    public LenghWindow()
     {
         InitializeComponent();
     }
 
-    private void CurrencyConvertButton_Click(object sender, RoutedEventArgs e)
+    private void LenghConvertButton_OnClick(object sender, RoutedEventArgs e)
     {
         double inputValue;
         if (double.TryParse(InputTextBox.Text, out inputValue))
@@ -20,7 +20,7 @@ public partial class CurrencyWindow
 
             if (fromUnit != null && toUnit != null)
             {
-                double result = ConvertCurrency(inputValue, fromUnit, toUnit);
+                double result = ConvertLengh(inputValue, fromUnit, toUnit);
                 ResultTextBlock.Text = $"{inputValue} {fromUnit} = {result:F2} {toUnit}";
             }
             else
@@ -34,19 +34,19 @@ public partial class CurrencyWindow
         }
     }
 
-    private double ConvertCurrency(double value, string from, string to)
+    private double ConvertLengh(double value, string from, string to)
     {
         var exchangeRates = new Dictionary<string, double>
         {
-            { "KZT", 1 },       
-            { "Dollar", 470 },   
-            { "Ruble", 5.3 }      
+            { "Metres", 1 },       
+            { "Kilometres", 1000},   
+            { "Centimetres", 0.01}      
         };
 
         if (exchangeRates.ContainsKey(from) && exchangeRates.ContainsKey(to))
         {
-            double valueInKzt = value * exchangeRates[from]; 
-            return valueInKzt / exchangeRates[to]; 
+            double valueInMetres = value * exchangeRates[from]; 
+            return valueInMetres / exchangeRates[to]; 
         }
 
         return value; 

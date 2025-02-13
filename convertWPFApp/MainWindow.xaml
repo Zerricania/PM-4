@@ -5,23 +5,43 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:convertWPFApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="200" Width="420">
+        Title="MainWindow" Height="200" Width="420"> 
     <Grid>
-        <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Background="DimGray" >
             <StackPanel Orientation="Horizontal">
                 <Button 
                     Content="Валюта"
                     Click="currencyWindowOpen_Click"
+                    Background="DarkOrange"
+                    Foreground="Azure"
+                    FontWeight="SemiBold"
+                    FontStretch="Normal"
+                    FontSize="25"
+                    BorderBrush="Beige"
                     Width="100" Height="50"
                      Margin=" 30 0 0 60  ">
                 </Button>
                 <Button 
                     Content="Длина"
+                    Background="DarkOrange"
+                    Foreground="Azure"
+                    FontWeight="SemiBold"
+                    FontStretch="Normal"
+                    FontSize="25"
+                    BorderBrush="Beige"
+                    Click="LenghWindowOpen_Click"
                     Width="100" Height="50"
                     Margin=" 30 0 0 60 ">
                 </Button>
-                <Button 
+                <Button
+                    Background="DarkOrange"
+                    Foreground="Azure"
+                    FontWeight="SemiBold"
+                    FontStretch="Normal"
+                    FontSize="25"
+                    BorderBrush="Beige"
                     Content="Масса"
+                    Click="MassWindowOpen_Click"
                     Width="100" Height="50"
                     Margin=" 30 0 0 60 ">
                 </Button>

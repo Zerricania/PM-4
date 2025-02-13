@@ -3,14 +3,14 @@ using System.Windows.Controls;
 
 namespace convertWPFApp.Views;
 
-public partial class CurrencyWindow
+public partial class MassWindow : Window
 {
-    public CurrencyWindow()
+    public MassWindow()
     {
         InitializeComponent();
     }
 
-    private void CurrencyConvertButton_Click(object sender, RoutedEventArgs e)
+    private void massConvertButton_Click(object sender, RoutedEventArgs e)
     {
         double inputValue;
         if (double.TryParse(InputTextBox.Text, out inputValue))
@@ -20,7 +20,7 @@ public partial class CurrencyWindow
 
             if (fromUnit != null && toUnit != null)
             {
-                double result = ConvertCurrency(inputValue, fromUnit, toUnit);
+                double result = ConvertMass(inputValue, fromUnit, toUnit);
                 ResultTextBlock.Text = $"{inputValue} {fromUnit} = {result:F2} {toUnit}";
             }
             else
@@ -34,19 +34,19 @@ public partial class CurrencyWindow
         }
     }
 
-    private double ConvertCurrency(double value, string from, string to)
+    private double ConvertMass(double value, string from, string to)
     {
         var exchangeRates = new Dictionary<string, double>
         {
-            { "KZT", 1 },       
-            { "Dollar", 470 },   
-            { "Ruble", 5.3 }      
+            { "Gram", 1 },       
+            { "Kilogram", 1000 },   
+            { "Pound", 453.5 }      
         };
 
         if (exchangeRates.ContainsKey(from) && exchangeRates.ContainsKey(to))
         {
-            double valueInKzt = value * exchangeRates[from]; 
-            return valueInKzt / exchangeRates[to]; 
+            double valueInGram = value * exchangeRates[from]; 
+            return valueInGram / exchangeRates[to]; 
         }
 
         return value; 

@@ -1,0 +1,70 @@
+﻿<Window x:Class="convertWPFApp.Views.MassWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:convertWPFApp.Views"
+        mc:Ignorable="d"
+        Title="MassWindow" Height="450" Width="500" Background="DimGray">
+    <Grid>
+         <Grid>
+                <Label 
+                    Content="From" 
+                    Margin="50" 
+                    Foreground="Azure"
+                    Padding="20 30"
+                    FontWeight="DemiBold"
+                    ></Label>
+                <Label 
+                    Content="To"            
+                    Foreground="Azure"
+                    Margin="50" 
+                    Padding="30 110"
+                    FontWeight="DemiBold"
+                ></Label>
+                <ComboBox Name="FromComboBox" Width="100" Height="30" Margin="110,70" VerticalAlignment="Top" HorizontalAlignment="Left">
+                    <ComboBoxItem Content="Gram"></ComboBoxItem>
+                    <ComboBoxItem Content="Kilogram"></ComboBoxItem>
+                    <ComboBoxItem Content="Pound"></ComboBoxItem>
+                </ComboBox>
+                <ComboBox Name="ToComboBox" Width="100" Height="30" Margin="110,150" VerticalAlignment="Top" HorizontalAlignment="Left">
+                    <ComboBoxItem Content="Gram"></ComboBoxItem>
+                    <ComboBoxItem Content="Kilogram"></ComboBoxItem>
+                    <ComboBoxItem Content="Pound"></ComboBoxItem>
+                </ComboBox>
+                <Button 
+                    Background="DarkOrange"
+                    Foreground="Azure"
+                    FontWeight="SemiBold"
+                    FontStretch="Normal"
+                    FontSize="20"
+                    BorderBrush="Beige"                    Name="MassConvertButton" 
+                    Click="massConvertButton_Click"
+                    Content="Convert"
+                    Width="100" Height="30"
+                    Margin="10,250,10,0"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Right">
+                </Button>
+                <TextBox Background="DarkOrange"
+                         Foreground="Azure"
+                         FontWeight="SemiBold"
+                         FontStretch="Normal"
+                         FontSize="20"
+                         BorderBrush="Beige" Name="InputTextBox" Text="Input Value" Width="200" Height="30" Margin="200,0,10,280"></TextBox>
+                <TextBox
+                    Background="DarkOrange"
+                    Foreground="Azure"
+                    FontWeight="SemiBold"
+                    FontStretch="Normal"
+                    FontSize="20"
+                    BorderBrush="Beige"
+                    Name="ResultTextBlock"
+                    Text="Your result"
+                    Width="200" Height="30"
+                    Margin="10,300,10,0"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Center"></TextBox>
+            </Grid>
+    </Grid>
+</Window>

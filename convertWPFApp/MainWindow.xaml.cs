@@ -26,4 +26,16 @@ public partial class MainWindow : Window
         CurrencyWindow currencyWindow = new CurrencyWindow();
         currencyWindow.ShowDialog(); 
     }
+
+    private void MassWindowOpen_Click(object sender, RoutedEventArgs e)
+    {
+        MassWindow massWindow = new MassWindow();
+        massWindow.ShowDialog();
+    }
+
+    private void LenghWindowOpen_Click(object sender, RoutedEventArgs e)
+    {
+        LenghWindow lenghWindow = new LenghWindow();
+        lenghWindow.ShowDialog();
+    }
 }
